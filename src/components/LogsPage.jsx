@@ -19,7 +19,7 @@ const LogsPage = ({ token }) => {
             });
             if (!res.ok) throw new Error("Error al cargar logs");
             const data = await res.json();
-            setLogs(data || []);
+            setLogs(data.logs || []);
         } catch (err) {
             setError(err.message);
         } finally {
@@ -44,7 +44,7 @@ const LogsPage = ({ token }) => {
                 <div className="bg-white rounded-lg shadow p-8 text-center">
                     <div className="text-gray-500 mb-4">No hay logs disponibles.</div>
                 </div>            ) : (
-                <div className="space-y-3 max-h-[60vh] overflow-y-auto">
+                <div className="space-y-3 h-[calc(100vh-4rem)] overflow-y-auto">
                     {logs.map((log, idx) => (
                         <div
                             key={idx}
