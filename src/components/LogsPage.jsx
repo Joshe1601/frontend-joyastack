@@ -14,7 +14,7 @@ const LogsPage = ({ token }) => {
         setLoading(true);
         setError("");
         try {
-            const res = await fetch("http://localhost:8001/logs", {
+            const res = await fetch("http://10.20.12.32:8001/logs", {
                 headers: { Authorization: `Bearer ${token}` },
             });
             if (!res.ok) throw new Error("Error al cargar logs");
