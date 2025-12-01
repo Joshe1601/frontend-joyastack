@@ -30,6 +30,14 @@ const NavBar = ({ username, role, onLogout, currentView, onNavigate }) => {
                     {role === "admin" &&
                         navItem("Editor", "editor", <Network size={18} />)}
 
+                    <button
+                        onClick={() => window.location.href = "http://10.20.12.32:3000"}
+                        className="bg-amber-600 hover:bg-amber-700 text-white px-2 py-1 rounded-lg flex items-center gap-2 transition"
+                    >
+                        Grafana
+                    </button>
+
+
                     <div className="flex items-center gap-2 border-l pl-3 ml-3">
                         <span className="text-gray-700">Bienvenido, <strong>{username}</strong></span>
                         <button
